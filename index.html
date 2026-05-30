@@ -725,7 +725,7 @@
 
         <ul class="drl-list">
             <li><strong>Stabilité exceptionnelle ✓ :</strong> Peu sensible aux hyperparamètres. Fonctionne sur une très grande variété de tâches sans modification.</li>
-            <li><strong>Off-Policy partiel ✓ :</strong> On peut réutiliser un même batch de données pour plusieurs passes de gradient (K epochs), ce qui améliore l'efficacité.</li>
+            <li><strong>Efficacité des données améliorée ✓ :</strong> Bien qu'il soit strictement <strong>On-Policy</strong>, PPO permet de réutiliser un batch fraîchement collecté pour plusieurs passes de gradient (K epochs) grâce à l'échantillonnage d'importance, sans risquer l'effondrement.</li>
             <li><strong>RLHF (ChatGPT) :</strong> Un réseau de récompense entraîné sur des préférences humaines joue le rôle de l'environnement. PPO optimise le LLM pour maximiser ces récompenses, tout en restant proche du modèle initial (prévient le reward hacking).</li>
         </ul>
 
@@ -826,7 +826,7 @@
                 <div>Replay Buffer</div>
                 <div style="color:var(--accent3)">✓ Oui (Off-Policy)</div>
                 <div style="color:#ef4444">✗ Non (On-Policy)</div>
-                <div style="color:var(--accent4)">Partiel (PPO : K epochs)</div>
+                <div style="color:#ef4444">✗ Non (Rollout Buffer vidé)</div>
             </div>
             <div class="compare-row" style="grid-template-columns: 1.6fr 1.4fr 1.4fr 1.4fr;">
                 <div>Variance</div>
